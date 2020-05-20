@@ -1,7 +1,7 @@
 FROM golang:alpine as builder
 
-COPY . /build/
 WORKDIR /build
+ADD . /build/
 
 RUN GOOS=linux GARCH=amd64 CGO_ENABLED=0 go build -mod=vendor -o api-server .
 
